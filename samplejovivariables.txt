@@ -16,9 +16,17 @@
       OnInit
         Variable Global Set BackgroundSource --Background Scene--
 
+    #Avatar Link
+      OnInit
+        Variable Global Set Avatar --Avatar Picture--
+
     #TwitchID
       OnInit
-        Variable Global Set TwitchID Jovine
+        Variable Global Set TwitchID --YOUR TWICH USERNAME HERE--
+
+    #YoutubeID
+      OnInit
+        Variable Global Set YoutubeID --YOUR YOUTUBE ID HERE--
 
 ###########################
 #     Test Variables      #
