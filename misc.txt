@@ -7,3 +7,26 @@
     delay 5
     OBS Scenesource "Transition Screen" AcceptableEveryBaboon-mobile.mp4 off
     OBS Scenesource "Primary Scene" AcceptableEveryBaboon-mobile.mp4 off
+
+##########################
+# Show Off Custom Emotes #
+##########################
+
+  onCommand e 60 "!bttvEmotes"
+    variable Global load TwitchID
+    API GET "https://decapi.me/bttv/emotes/{TwitchID}"
+    chat send {api_data}
+
+  onCommand e 60 "!ffzEmotes"
+    variable Global load TwitchID
+    API GET "https://decapi.me/ffz/emotes/{TwitchID}"
+    chat send {api_data}
+
+##########################
+# Latest YouTube Video   #
+##########################
+
+  onCommand e 60 "!latestvideo"
+    variable Global load YoutubeID
+    API GET "https://decapi.me/youtube/latest_video?id={YoutubeID}"
+    chat send {api_data}
