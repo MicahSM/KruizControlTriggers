@@ -8,7 +8,7 @@
 #Twitch Post to Discord#
 ########################
 
-  OnCommand b 0 !discordtest
+  OnCommand b 0 !live
     variable Global load DiscordWebHook
     variable Global load TwitchID
     variable Global Load Avatar
