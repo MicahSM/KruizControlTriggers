@@ -8,17 +8,17 @@
 #Twitch Post to Discord#
 ########################
 
-  OnCommand b 0 !live
-    Variable Global Load DiscordWebHook
-    Variable Global Load TwitchID
+  OnCommand b 0 !discordtest
+    variable Global load DiscordWebHook
+    variable Global load TwitchID
+    variable Global Load Avatar
     API GET "https://decapi.me/twitch/status/{TwitchID}"
-    Discord Create JoviTest "https://discord.com/api/webhooks/910742830945824819/pa7yVnyz655v1SKC5xfv0vHyzDwhP17VdWaKYxBE7sLBq1EnZcNX4u9TjGTTKYXLXvLr"
+    Discord Create JoviTest {DiscordWebHook}
     Discord Message JoviTest "[{api_data}](https://twitch.tv/{TwitchID})"
-    Discord Image JoviTest "https://static-cdn.jtvnw.net/jtv_user_pictures/f3a584d5-47f6-44c7-8bf7-2fd75a63eb0c-profile_banner-480.jpg"
     Discord FooterText JoviTest "{TwitchID}"
     API GET "https://decapi.me/twitch/game/{TwitchID}"
     Discord Description JoviTest "Live on Twitch! - Playing {api_data}"
-    Discord FooterIcon JoviTest "https://static-cdn.jtvnw.net/jtv_user_pictures/46174b16-9ec3-484a-b01b-054530e8ffef-profile_image-70x70.png"
+    Discord FooterIcon JoviTest "{Avatar}"
     Discord Send JoviTest
 
 ###########################
@@ -26,13 +26,14 @@
 ###########################
 
   OnKeyword b 18000 "{TwitchID} is now live!"
-    Variable Load DiscordWebHook
+    Variable Global Load DiscordWebHook
+    variable Global load TwitchID
+    variable Global Load Avatar
     API GET "https://decapi.me/twitch/status/{TwitchID}"
-    Discord Create JoviTest "https://discord.com/api/webhooks/910742830945824819/pa7yVnyz655v1SKC5xfv0vHyzDwhP17VdWaKYxBE7sLBq1EnZcNX4u9TjGTTKYXLXvLr"
+    Discord Create JoviTest {DiscordWebHook}
     Discord Message JoviTest "[{api_data}](https://twitch.tv/{TwitchID})"
-    Discord Image JoviTest "https://static-cdn.jtvnw.net/jtv_user_pictures/f3a584d5-47f6-44c7-8bf7-2fd75a63eb0c-profile_banner-480.jpg"
     Discord FooterText JoviTest "{TwitchID}"
     API GET "https://decapi.me/twitch/game/{TwitchID}"
     Discord Description JoviTest "Live on Twitch! - Playing {api_data}"
-    Discord FooterIcon JoviTest "https://static-cdn.jtvnw.net/jtv_user_pictures/46174b16-9ec3-484a-b01b-054530e8ffef-profile_image-70x70.png"
+    Discord FooterIcon JoviTest "{Avatar}"
     Discord Send JoviTest
