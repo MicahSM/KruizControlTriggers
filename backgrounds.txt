@@ -1,0 +1,153 @@
+##############################
+#       Load Variables       #
+##############################
+  # Make sure to have these Variables:
+  # - {BackgroundSource}
+  #
+##############################
+# OnInit Stuff (Don't Touch) #
+##############################
+
+  OnInit
+    #Global BG List
+    List Global Backgrounds On
+    #Global Variable for Chosen Background
+    Variable Global Set ChosenBG
+
+###########################
+# Making Backgrounds List #
+###########################
+
+#Commands to change list - CASE SENSITIVE!
+
+  OnCommand e 15 "!backgrounds" "!background"
+    List Export Backgrounds
+    chat Send {Backgrounds}
+    exit
+
+  OnCommand bm 0 "!Backgroundadd" "!Backgroundsadd" "!bgadd"
+    List Add Backgrounds {after}
+    chat Send "{after} added!"
+    exit
+
+  OnCommand bm 0 "!Backgroundremove" "!Backgroundsremove" "!bgremove"
+    List Index Backgrounds {after}
+    if 2 {index} = -1
+      chat Send "{after} isn't on the list."
+      exit
+    List Remove Backgrounds {index}
+    chat Send "{after} has been removed."
+    exit
+
+  OnCommand bm 0 "!bgclear" "backgroundsclear" "backgroundclear"
+    List Empty Backgrounds
+    Chat Send "Backgrounds have been cleared."
+
+###########################
+#     Basic BG Stuffs     #
+###########################
+
+## Command to List Current BG ##
+  OnCommand e 15 "!currentBG" "!BGCurrent"
+    Variable Global Load BackgroundSource
+    #Get Length of BGList
+    List Count Backgrounds
+    Param Create BGIncrement 0
+    #loop for length of BGList
+    loop 6 {count}
+      List Get Backgrounds {BGIncrement}
+      OBS IsSceneSourceVisible {BackgroundSource} {value}
+      if 2 {is_visible} = true
+        Chat Send "The Current Background is: {value}"
+        exit
+      Param Add BGIncrement 1
+
+## Command to Manually Change BG ##
+  OnCommand vbm 0 "!changebg" "!bgset"
+    Variable Global Load BackgroundSource
+    variable set ChosenBG {after}
+    List Count Backgrounds
+    Param Create BGIncrement 0
+    #loop for length of BGList
+    loop 5 {count}
+      List Get Backgrounds {BGIncrement}
+      OBS SceneSource {BackgroundSource} {value} off
+      if 1 {ChosenBG} = {value}
+        OBS SceneSource {BackgroundSource} {value} on
+      Param Add BGIncrement 1
+
+## Channel Point Reward to Pick BG ##
+  OnChannelPoint "Pick BG"
+    Variable Global Load BackgroundSource
+    variable set ChosenBG {after}
+    List Count Backgrounds
+    Param Create BGIncrement 0
+    #loop for length of BGList
+    loop 5 {count}
+      List Get Backgrounds {BGIncrement}
+      OBS SceneSource {BackgroundSource} {value} off
+      if 1 {ChosenBG} = {value}
+        OBS SceneSource {BackgroundSource} {value} on
+      Param Add BGIncrement 1
+
+
+
+###########################
+#     Randomizer Code     #
+###########################
+
+## Channel Point Reward ##
+  Variable Global Load BackgroundSource
+  #Get Length of BGList
+  List Count Backgrounds
+  #Select the Chosen One
+  List Get Backgrounds
+  #If Dupe, try to remove
+  loop 2 25
+    if 1 {ChosenBG} = {value}
+      List Get Backgrounds
+  Variable Set ChosenBG {value}
+  Param Create BGIncrement 0
+  #loop for length of BGList
+  loop 5 {count}
+    List Get Backgrounds {BGIncrement}
+    OBS SceneSource {BackgroundSource} {value} off
+    if 1 {ChosenBG} = {value}
+      OBS SceneSource {BackgroundSource} {value} on
+    Param Add BGIncrement 1
+
+## Override Command for Broadcaster ##
+  OnCommand b 0 "!RandomBG" "!bgrandom"
+    Variable Global Load BackgroundSource
+    #Get Length of BGList
+    List Count Backgrounds
+    #Select the Chosen One
+    List Get Backgrounds
+    #If Dupe, try to remove
+    loop 2 25
+      if 1 {ChosenBG} = {value}
+        List Get Backgrounds
+    Variable Set ChosenBG {value}
+    Param Create BGIncrement 0
+    #loop for length of BGList
+    loop 5 {count}
+      List Get Backgrounds {BGIncrement}
+      OBS SceneSource {BackgroundSource} {value} off
+      if 1 {ChosenBG} = {value}
+        OBS SceneSource {BackgroundSource} {value} on
+      Param Add BGIncrement 1
+
+###########################
+#      Testing  Code      #
+###########################
+
+onCommand b 0 "!bglist"
+  #Get Length of BGList
+  List Count Backgrounds
+  Param Create BGIncrement 0
+  #loop for length of BGList
+  loop 4 {count}
+    List Get Backgrounds {BGIncrement}
+    chat send {BGIncrement}
+    Chat send {value}
+    Param Add BGIncrement 1

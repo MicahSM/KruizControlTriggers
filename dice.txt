@@ -1,0 +1,17 @@
+OnCommand e 4 !rollsplit
+  Function 'var arr = [after].split("d"); return {quantity: arr[0], magnitude: arr[1]}'
+  If 1 {quantity} > 1
+    Loop 2 {quantity}
+      Random Number 1 {magnitude}
+      List Add DiceResults {number}
+  List Join DiceResults " 🎲, "
+  Chat Send "{user} rolled {joined} 🎲"
+  List Empty DiceResults
+  exit
+
+OnCommand e 4 !roll
+  Function 'var arr = [after].split("d"); return {quantity: arr[0], magnitude: arr[1]}'
+  Function 'return {multitude: [quantity]*[magnitude]}'
+  Random Number {quantity} {multitude}
+  Chat Send "{user} rolled {number} 🎲"
+  exit

@@ -1,0 +1,32 @@
+###########################
+#    Secret Variables     #
+###########################
+
+  ## DON'T SHARE THESE! ##
+
+  #Discord Web Hook
+    OnInit
+      Variable Global Set DiscordWebHook --YOUR WEBHOOK HERE--
+
+###########################
+#    Module Settings      #
+###########################
+
+    #Backgrounds Scene
+      OnInit
+        Variable Global Set BackgroundSource --Background Scene--
+
+    #TwitchID
+      OnInit
+        Variable Global Set TwitchID Jovine
+
+###########################
+#     Test Variables      #
+###########################
+
+  ## Primarily for Testing Out Code, if you ever write your own stuff. ##
+  ## Not Needed for Already Done Stuff ##
+
+  #Discord Web Hook - Test Channel - Still don't SHARE
+    OnInit
+      Variable Global Set DiscordWebHookTEST --YOUR WEBHOOK HERE--

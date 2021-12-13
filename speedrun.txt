@@ -1,0 +1,37 @@
+#Init Stuff to make Lists Global
+  OnInit
+    List Global QuickRuns on
+
+############
+#Quick Runs#
+############
+
+  OnCommand e 0 "!quickruns" "!quickrunlist"
+    List Export QuickRuns
+    chat Send {QuickRuns}
+    exit
+
+  OnCommand vbm 0 "!quickrunadd" "!quickrunsadd"
+    param proper after
+    List Add QuickRuns {after}
+    chat Send "{after} added!"
+    exit
+
+  OnCommand vbm 0 "!quickrunremove" "!quickrunsremove"
+    param proper after
+    List Index QuickRuns {after}
+    if 2 {index} = -1
+      chat Send "{after} isn't on the list."
+      exit
+    List Remove QuickRuns {index}
+    chat Send "{after} has been removed."
+    exit
+
+  OnCommand e 0 "!quickrunrandom" "!quickrunsrandom"
+    List Get QuickRuns
+    chat Send "RNG Has Chosen: {value}"
+    exit
+
+###########
+###########
+###########

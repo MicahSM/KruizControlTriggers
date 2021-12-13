@@ -1,0 +1,65 @@
+########################
+#      CycloneFN       #
+########################
+  OnSpeak CycloneFN
+    List Contains Greeted {user}
+    If 1 {contains} = true
+      Exit
+    Play 100 wait "bikkuri.wav"
+    List Add Greeted {user}
+    ExportGreetedList
+
+########################
+#        Jovine        #
+########################
+  OnSpeak Jovine
+    List Contains Greeted {user}
+    If 1 {contains} = true
+      Exit
+    Play 100 wait "yowassup.wav"
+    List Add Greeted {user}
+    ExportGreetedList
+
+########################
+#     Ataraxia173      #
+########################
+  OnSpeak ataraxia173
+    List Contains Greeted {user}
+    If 1 {contains} = true
+      Exit
+    Play 100 wait "yowassup.wav"
+    List Add Greeted {user}
+    ExportGreetedList
+
+########################
+#      QsModShop      #
+########################
+  OnSpeak QsModShop
+    List Contains Greeted {user}
+    If 1 {contains} = true
+      Exit
+    Play 100 wait "yousucknuts.mp3"
+    List Add Greeted {user}
+    ExportGreetedList
+
+########################
+#      Seskomoe        #
+########################
+  OnSpeak Seskomoe
+    List Contains Greeted {user}
+    If 1 {contains} = true
+      Exit
+    Play 100 wait "lanky.mp3"
+    List Add Greeted {user}
+    ExportGreetedList
+
+########################
+#     Ginger_Lore      #
+########################
+  OnSpeak ginger_lore
+    List Contains Greeted {user}
+    If 1 {contains} = true
+      Exit
+    Play 100 wait "mariokart.mp3"
+    List Add Greeted {user}
+    ExportGreetedList

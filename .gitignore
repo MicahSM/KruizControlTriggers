@@ -1,0 +1,8 @@
+#ignore personal variables
+jovivariables.txt
+
+#ignore testing junk
+testing.txt
+
+#ignore javascript testing junk
+javascript.txt

@@ -1,0 +1,9 @@
+########################
+#      Monika Dab      #
+########################
+  OnKeyword e 60 "MonikaDab"
+    OBS Scenesource "Transition Screen" AcceptableEveryBaboon-mobile.mp4 on
+    OBS Scenesource "Primary Scene" AcceptableEveryBaboon-mobile.mp4 on
+    delay 5
+    OBS Scenesource "Transition Screen" AcceptableEveryBaboon-mobile.mp4 off
+    OBS Scenesource "Primary Scene" AcceptableEveryBaboon-mobile.mp4 off

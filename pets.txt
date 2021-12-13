@@ -1,0 +1,3 @@
+OnChannelPoint "Swap My Pet"
+  OBS SceneSource "pets" "TotallyMyPetDog" toggle
+  OBS SceneSource "pets" "TotallyMyPetCat" toggle

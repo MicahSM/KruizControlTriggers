@@ -1,0 +1,5 @@
+OnCommand v 0 !quoteadd
+  Chat Send "!quote add {after}"
+
+OnCommand v 0 !addquote
+  Chat Send "!quote add {after}"
