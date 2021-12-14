@@ -3,6 +3,7 @@ jovivariables.txt
 
 #ignore testing junk
 testing.txt
+test/**
 
 #ignore javascript testing junk
 javascript.txt
