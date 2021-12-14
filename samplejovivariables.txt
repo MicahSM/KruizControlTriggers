@@ -29,6 +29,18 @@
         variable Set YoutubeID --YOUR YOUTUBE ID HERE--
 
 ###########################
+#     Entry SFX Setup     #
+###########################
+#
+# MAKE SURE YOU HAVE THE SOUND IN YOUR SOUND FILE!
+#
+
+OnInit
+#Create a list with the SFXfile as it's only entry
+#Example:
+#list add JovineEnter "yowassup.wav"
+
+###########################
 #     Test Variables      #
 ###########################
 
