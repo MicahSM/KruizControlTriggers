@@ -1,0 +1,134 @@
+#######################
+# Steam Cleaning Init #
+#######################
+
+  OnInit
+  list empty SteamCleaningList
+  list empty SteamCleaningPlayers
+
+#######################
+# Steam Cleaning Core #
+#######################
+
+  ## Choose Steam Cleaner ##
+    OnCommand b 0 "!SteamClean"
+      variable set SteamCleaningOn true
+      variable set Cleaner {after}
+      Chat Send "Congrats {after}, you're the cleaner! Type !roll 1d100 to select the game!"
+
+  ## Roll Triggered ##
+    OnMessage SteamRoll
+      variable load lastd100
+      list contains SteamCleaningList {lastd100}
+      if 2 {contains} = true
+        message send SteamRollDupe
+        Exit
+      if 2 {contains} = false
+        message send SteamRollNew
+        Exit
+      Chat Send "Uh Oh, Roll Triggered Failed"
+
+  ## Roll Dupe ##
+    OnMessage SteamRollDupe
+      variable load lastd100
+      Chat Send "Whoops! Looks like {lastd100} has already been rolled. Type !modify if you want to modify the roll, otherwise roll again!"
+      exit
+
+  ## Roll New ##
+    OnMessage SteamRollNew
+      variable load lastd100
+      variable set scdicerolled true
+      chat send "Awesome! Looks like {lastd100} hasnt been rolled yet! Type !keep to keep the roll, or !modify if you want to modify the roll."
+      exit
+
+  ## Steam Clean End ##
+    OnMessage SteamEnd
+      variable set SteamCleaningOn false
+      variable set Cleaner Null
+      variable set lastd100 "No variable found"
+      variable set scdicerolled false
+      exit
+
+  ## Steam Clean Keep ##
+    OnCommand e 0 "!keep"
+      variable load lastd100
+      variable load Cleaner
+      variable load SteamCleaningOn
+      list contains SteamCleaningList {lastd100}
+      if 2 {lastd100} = "No variable found"
+        chat send "Whoops! You forgot to !roll 1d100"
+        Exit
+      if 2 {SteamCleaningOn} = false
+        chat send "Whoops! Steam Cleaning isn't currently running."
+        Exit
+      if 2 {Cleaner} != {user}
+        chat send "HEY! You're not the cleaner!"
+        exit
+      if 2 {contains} = true
+        message send SteamRollDupe
+        Exit
+      Chat Send "{lastd100} locked in!"
+      list add SteamCleaningList {lastd100}
+      message Send SteamEnd
+
+  ## Steam Clean Modify ##
+    OnCommand e 0 "!Modify"
+      Chat Send "Dice Mods Unlocked, Go Ahead and SPEND THOSE POINTS!"
+      exit
+
+
+#######################
+# Dice Channel Points #
+#######################
+
+  OnChannelPoint "+/- 1 to a roll! 🎲"
+    variable load TwitchID
+    variable load SteamCleaningOn
+    variable load Cleaner
+    if 15 {user} = {Cleaner} or {TwitchID} = {Cleaner}
+      if 14 {SteamCleaningOn} = true
+        variable load lastd100
+        param create tempdice {lastd100}
+        if 5 {message} = "+"
+          param add tempdice 1
+          chat send "{tempdice}"
+          variable set lastd100 {tempdice}
+          chat send "Roll is now {lastd100}! Type !keep if you're done."
+          exit
+        if 4 {message} = "-"
+          param subtract tempdice 1
+          variable set lastd100 {tempdice}
+          chat send "Roll is now {lastd100}! Type !keep if you're done."
+          exit
+        Chat Send "Oops, you either forgot a + or a -, or typed in something incorrect. The die is still {lastd100}"
+        exit
+
+#######################
+# Manual SC  Override #
+#######################
+
+  ## Manual Game Number add to list ##
+    OnCommand b 0 "!SCAdd"
+      List add SteamCleaningList {after}
+      chat send "{after} added to the list."
+
+  ## Manual Game Number remove to list ##
+    OnCommand b 0 "!SCRemove"
+      List remove SteamCleaningList {after}
+      chat send "{after} removed from the list."
+
+  ## Check Games Played ##
+    OnCommand e 15 "!SCPlayed"
+      list export SteamCleaningList
+      chat send "{SteamCleaningList}"
+
+  ## Is SteamCleaning On ##
+    OnCommand b 0 "!SteamCheck"
+      variable load SteamCleaningOn
+      Chat Send "{SteamCleaningOn}"
+
+## Things to do for Steam Cleaning
+# [ ] Check for Duplicate
+#   [ ] Make Duplicate list
+# [ ] Implement Increase/Decrease roll
+#   [ ] Identify Increase/Decrease
