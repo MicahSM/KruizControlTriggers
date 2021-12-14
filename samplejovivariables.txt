@@ -6,7 +6,7 @@
 
   #Discord Web Hook
     OnInit
-      Variable Global Set DiscordWebHook --YOUR WEBHOOK HERE--
+      variable Set DiscordWebHook --YOUR WEBHOOK HERE--
 
 ###########################
 #    Module Settings      #
@@ -14,19 +14,19 @@
 
     #Backgrounds Scene
       OnInit
-        Variable Global Set BackgroundSource --Background Scene--
+        variable Set BackgroundSource --Background Scene--
 
     #Avatar Link
       OnInit
-        Variable Global Set Avatar --Avatar Picture--
+        variable Set Avatar --Avatar Picture--
 
     #TwitchID
       OnInit
-        Variable Global Set TwitchID --YOUR TWICH USERNAME HERE--
+        variable Set TwitchID --YOUR TWICH USERNAME HERE--
 
     #YoutubeID
       OnInit
-        Variable Global Set YoutubeID --YOUR YOUTUBE ID HERE--
+        variable Set YoutubeID --YOUR YOUTUBE ID HERE--
 
 ###########################
 #     Test Variables      #
@@ -37,4 +37,4 @@
 
   #Discord Web Hook - Test Channel - Still don't SHARE
     OnInit
-      Variable Global Set DiscordWebHookTEST --YOUR WEBHOOK HERE--
+      variable Set DiscordWebHookTEST --YOUR WEBHOOK HERE--

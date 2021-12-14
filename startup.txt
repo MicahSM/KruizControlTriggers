@@ -9,9 +9,9 @@
 ########################
 
   OnCommand b 0 !live
-    variable Global load DiscordWebHook
-    variable Global load TwitchID
-    variable Global Load Avatar
+    variable load DiscordWebHook
+    variable load TwitchID
+    variable Load Avatar
     API GET "https://decapi.me/twitch/status/{TwitchID}"
     Discord Create JoviTest {DiscordWebHook}
     Discord Message JoviTest "[{api_data}](https://twitch.tv/{TwitchID})"
@@ -26,9 +26,9 @@
 ###########################
 
   OnKeyword b 18000 "{TwitchID} is now live!"
-    Variable Global Load DiscordWebHook
-    variable Global load TwitchID
-    variable Global Load Avatar
+    variable load DiscordWebHook
+    variable load TwitchID
+    variable Load Avatar
     API GET "https://decapi.me/twitch/status/{TwitchID}"
     Discord Create JoviTest {DiscordWebHook}
     Discord Message JoviTest "[{api_data}](https://twitch.tv/{TwitchID})"

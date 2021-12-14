@@ -49,7 +49,7 @@
 
 ## Command to List Current BG ##
   OnCommand e 15 "!currentBG" "!BGCurrent"
-    Variable Global Load BackgroundSource
+    Variable Load BackgroundSource
     #Get Length of BGList
     List Count Backgrounds
     Param Create BGIncrement 0
@@ -64,8 +64,8 @@
 
 ## Command to Manually Change BG ##
   OnCommand vbm 0 "!changebg" "!bgset"
-    Variable Global Load BackgroundSource
-    variable set ChosenBG {after}
+    Variable Load BackgroundSource
+    variable global set ChosenBG {after}
     List Count Backgrounds
     Param Create BGIncrement 0
     #loop for length of BGList
@@ -78,8 +78,8 @@
 
 ## Channel Point Reward to Pick BG ##
   OnChannelPoint "Pick BG"
-    Variable Global Load BackgroundSource
-    variable set ChosenBG {after}
+    Variable Load BackgroundSource
+    variable global set ChosenBG {after}
     List Count Backgrounds
     Param Create BGIncrement 0
     #loop for length of BGList
@@ -97,7 +97,7 @@
 ###########################
 
 ## Channel Point Reward ##
-  Variable Global Load BackgroundSource
+  Variable Load BackgroundSource
   #Get Length of BGList
   List Count Backgrounds
   #Select the Chosen One
@@ -106,7 +106,7 @@
   loop 2 25
     if 1 {ChosenBG} = {value}
       List Get Backgrounds
-  Variable Set ChosenBG {value}
+  variable global set ChosenBG {value}
   Param Create BGIncrement 0
   #loop for length of BGList
   loop 5 {count}
@@ -118,7 +118,7 @@
 
 ## Override Command for Broadcaster ##
   OnCommand b 0 "!RandomBG" "!bgrandom"
-    Variable Global Load BackgroundSource
+    Variable Load BackgroundSource
     #Get Length of BGList
     List Count Backgrounds
     #Select the Chosen One
@@ -127,7 +127,7 @@
     loop 2 25
       if 1 {ChosenBG} = {value}
         List Get Backgrounds
-    Variable Set ChosenBG {value}
+    variable global set ChosenBG {value}
     Param Create BGIncrement 0
     #loop for length of BGList
     loop 5 {count}

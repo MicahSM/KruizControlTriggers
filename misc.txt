@@ -13,12 +13,12 @@
 ##########################
 
   onCommand e 60 "!bttvEmotes"
-    variable Global load TwitchID
+    variable load TwitchID
     API GET "https://decapi.me/bttv/emotes/{TwitchID}"
     chat send {api_data}
 
   onCommand e 60 "!ffzEmotes"
-    variable Global load TwitchID
+    variable load TwitchID
     API GET "https://decapi.me/ffz/emotes/{TwitchID}"
     chat send {api_data}
 
@@ -27,6 +27,6 @@
 ##########################
 
   onCommand e 60 "!latestvideo"
-    variable Global load YoutubeID
+    variable load YoutubeID
     API GET "https://decapi.me/youtube/latest_video?id={YoutubeID}"
     chat send {api_data}

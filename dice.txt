@@ -1,4 +1,4 @@
-OnCommand e 4 !rollsplit
+OnCommand e 4 "!rollsplit"
   Function 'var arr = [after].split("d"); return {quantity: arr[0], magnitude: arr[1]}'
   If 1 {quantity} > 1
     Loop 2 {quantity}
@@ -9,9 +9,14 @@ OnCommand e 4 !rollsplit
   List Empty DiceResults
   exit
 
-OnCommand e 4 !roll
+OnCommand e 4 "!roll"
   Function 'var arr = [after].split("d"); return {quantity: arr[0], magnitude: arr[1]}'
   Function 'return {multitude: [quantity]*[magnitude]}'
   Random Number {quantity} {multitude}
   Chat Send "{user} rolled {number} 🎲"
+  if 4 {SteamCleaningOn} = true
+    if 3 {after} = "1d100"
+      if {user} = {Cleaner}
+        variable set lastd100 {number}
+        message send SteamRoll
   exit
