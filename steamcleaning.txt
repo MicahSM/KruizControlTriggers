@@ -11,7 +11,7 @@
 #######################
 
   ## Choose Steam Cleaner ##
-    OnCommand b 0 "!SteamClean"
+    OnCommand b 0 "!SteamClean" "!sc"
       variable set SteamCleaningOn true
       variable set Cleaner {after}
       Chat Send "Congrats {after}, you're the cleaner! Type !roll 1d100 to select the game!"
@@ -89,9 +89,8 @@
       if 14 {SteamCleaningOn} = true
         variable load lastd100
         param create tempdice {lastd100}
-        if 5 {message} = "+"
+        if 4 {message} = "+"
           param add tempdice 1
-          chat send "{tempdice}"
           variable set lastd100 {tempdice}
           chat send "Roll is now {lastd100}! Type !keep if you're done."
           exit
@@ -114,11 +113,16 @@
 
   ## Manual Game Number remove to list ##
     OnCommand b 0 "!SCRemove"
-      List remove SteamCleaningList {after}
-      chat send "{after} removed from the list."
+      List Index SteamCleaningList {after}
+      if 2 {index} = -1
+        chat Send "{after} isn't on the list."
+        exit
+      List Remove SteamCleaningList {index}
+      chat Send "{after} has been removed."
+      exit
 
   ## Check Games Played ##
-    OnCommand e 15 "!SCPlayed"
+    OnCommand e 15 "!SCPlayed" "!sclist"
       list export SteamCleaningList
       chat send "{SteamCleaningList}"
 
