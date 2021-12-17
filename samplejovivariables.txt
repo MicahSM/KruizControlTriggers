@@ -37,8 +37,8 @@
 
 OnInit
 #Create a list with the SFXfile as it's only entry
-#Example:
-#list add JovineEnter "yowassup.wav"
+#Example: (MAKE SURE USERNAME IS ALL LOWERCASE!)
+#list add jovineEnter "yowassup.wav"
 
 ###########################
 #     Test Variables      #

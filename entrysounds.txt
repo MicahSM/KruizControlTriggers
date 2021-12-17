@@ -2,6 +2,7 @@
 #       Modular        #
 ########################
 OnSpeak *
+param lower {user}
 List Contains Greeted {user}
 If 1 {contains} = true
   Exit
