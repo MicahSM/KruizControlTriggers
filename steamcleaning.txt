@@ -130,9 +130,3 @@
     OnCommand b 0 "!SteamCheck"
       variable load SteamCleaningOn
       Chat Send "{SteamCleaningOn}"
-
-## Things to do for Steam Cleaning
-# [ ] Check for Duplicate
-#   [ ] Make Duplicate list
-# [ ] Implement Increase/Decrease roll
-#   [ ] Identify Increase/Decrease

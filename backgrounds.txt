@@ -2,7 +2,7 @@
 #       Load Variables       #
 ##############################
   # Make sure to have these Variables:
-  # - {BackgroundSource}
+  # - BackgroundSource
   #
 ##############################
 # OnInit Stuff (Don't Touch) #
