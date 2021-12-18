@@ -1,6 +1,7 @@
 #######################
 #Channel Point Control#
 #######################
+
   OnChannelPoint "Media Controls"
     Param Lower message
     if 2 {message} = "back"
@@ -14,5 +15,6 @@
 ########################
 #      BVM Pause       #
 ########################
+
   onCommand bvm 0 "!pause" "!play"
     API GET http://localhost:32032/keypress?key=Media_Play_Pause&presses=1&pass=0vndMJT1
