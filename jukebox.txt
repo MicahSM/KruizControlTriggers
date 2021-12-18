@@ -1,0 +1,8 @@
+onMessage "jukebox100"
+  play 100 wait {data}
+
+onMessage "jukebox75"
+  play 75 wait {data}
+
+onMessage "jukebox50"
+  play 50 wait {data}
