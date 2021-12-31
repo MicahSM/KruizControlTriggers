@@ -1,17 +1,14 @@
 
 OnChannelPoint "Sound Effects"
-  Play 100 wait "{message}.wav"
-  Play 100 wait "{message}.mp3"
-  Play 100 wait "{message}.ogg"
-
+message send "SFX" "{message}"
 
 OnChannelPoint "Budget SFX"
-  Play 100 wait "{message}.wav"
-  Play 100 wait "{message}.mp3"
-  Play 100 wait "{message}.ogg"
-
+message send "SFX" "{message}"
 
 OnChannelPoint "First"
-  Play 100 wait "fanfare/{message}.wav"
-  Play 100 wait "fanfare/{message}.mp3"
-  Play 100 wait "fanfare/{message}.ogg"
+message send "SFX" "fanfare/{message}"
+
+onMessage "SFX"
+Play 100 wait "{data}.wav"
+Play 100 wait "{data}.mp3"
+Play 100 wait "{data}.ogg"
