@@ -16,5 +16,5 @@
 #      BVM Pause       #
 ########################
 
-  onCommand bvm 0 "!pause" "!play"
+  onCommand bvm 0 "!pausemusic" "!playmusic"
     API GET http://localhost:32032/keypress?key=Media_Play_Pause&presses=1&pass=0vndMJT1
