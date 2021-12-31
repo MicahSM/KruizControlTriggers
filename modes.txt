@@ -1,0 +1,19 @@
+########################
+#  Chat Mode Changes   #
+########################
+#Only one at a time can be activated due to how timers work
+
+onMessage "EmoteOnlyMode"
+chat send "/emoteonly"
+delay {data}
+chat send "/emoteonlyoff"
+
+onMessage "SubOnlyMode"
+chat send "/subcribers"
+delay {data}
+chat send "/subscribersoff"
+
+onMessage "SlowMode"
+chat send "/slow"
+delay {data}
+chat send "/slowoff"
