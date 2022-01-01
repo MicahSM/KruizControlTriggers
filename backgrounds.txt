@@ -39,7 +39,7 @@
     chat Send "{after} has been removed."
     exit
 
-  OnCommand bm 0 "!bgclear" "backgroundsclear" "backgroundclear"
+  OnCommand bm 0 "!bgclear" "!backgroundsclear" "!backgroundclear"
     List Empty Backgrounds
     Chat Send "Backgrounds have been cleared."
 
