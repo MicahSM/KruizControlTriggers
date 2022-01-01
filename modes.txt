@@ -3,17 +3,17 @@
 ########################
 #Only one at a time can be activated due to how timers work
 
-onMessage "EmoteOnlyMode"
+onAction "EmoteOnlyMode"
 chat send "/emoteonly"
-delay {data}
+delay {in1}
 chat send "/emoteonlyoff"
 
-onMessage "SubOnlyMode"
+onAction "SubOnlyMode"
 chat send "/subcribers"
-delay {data}
+delay {in1}
 chat send "/subscribersoff"
 
-onMessage "SlowMode"
+onAction "SlowMode"
 chat send "/slow"
-delay {data}
+delay {in1}
 chat send "/slowoff"

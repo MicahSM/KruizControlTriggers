@@ -1,14 +1,14 @@
 
 OnChannelPoint "Sound Effects"
-message send "SFX" "{message}"
+PlaySFX "{message}"
 
 OnChannelPoint "Budget SFX"
-message send "SFX" "{message}"
+PlaySFX "{message}"
 
 OnChannelPoint "First"
-message send "SFX" "fanfare/{message}"
+PlaySFX "fanfare/{message}"
 
-onMessage "SFX"
-Play 100 wait "{data}.wav"
-Play 100 wait "{data}.mp3"
-Play 100 wait "{data}.ogg"
+onAction "PlaySFX"
+Play 100 wait "{in1}.wav"
+Play 100 wait "{in1}.mp3"
+Play 100 wait "{in1}.ogg"
