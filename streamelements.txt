@@ -14,3 +14,9 @@ onAction streamelements_SetGame
 
 onAction streamelements_SetTitle
   chat send "!settitle {in1}"
+
+onAction streamelements_Duel
+  chat send "!duel {in1} {in2}"
+
+onAction streamelements_DuelDecline
+  chat send "!decline"
