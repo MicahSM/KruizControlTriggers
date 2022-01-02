@@ -29,6 +29,24 @@
         variable Set YoutubeID --YOUR YOUTUBE ID HERE--
 
 ###########################
+#    Raffle  Settings     #
+###########################
+
+  #Raffle Variables
+    OnInit
+      #List of Rarities
+      #Example:
+      list import "RaffleRarities" '["Common","Uncommon","Rare","Epic","Legendary"]'
+      #List of Prizes (1 per Rarity, MATCH THE NAME EXACTLY like Name_Prizelist)
+      #Example:
+      list import "Common_Prizelist" '["CommonPrizeSample"]'
+      list import "Uncommon_Prizelist" '["UncommonPrizeSample"]'
+      list import "Rare_Prizelist" '["RarePrizeSample"]'
+      list import "Epic_Prizelist" '["EpicPrizeSample"]'
+      list import "Legendary_Prizelist" '["LegendaryPrizeSample"]'
+
+
+###########################
 #     Entry SFX Setup     #
 ###########################
 #
@@ -37,8 +55,11 @@
 
 OnInit
 #Create a list with the SFXfile as it's only entry
-#Example: (MAKE SURE USERNAME IS ALL LOWERCASE!)
-#list add jovineEnter "yowassup.wav"
+## MAKE SURE USERNAMES ARE ALL LOWERCASE! ##
+#Example:
+list add jovineEnter "yowassup"
+#(User is Jovine, Soundeffect is yowassup.mp3)
+
 
 ###########################
 #     Test Variables      #
