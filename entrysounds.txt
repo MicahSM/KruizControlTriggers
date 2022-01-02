@@ -1,13 +1,15 @@
 ########################
-#       Modular        #
+#      Entry SFX       #
 ########################
-OnSpeak *
-List Contains Greeted {user}
-If 1 {contains} = true
-  Exit
-list get {user}Enter First
-if 1 {value} = "None found"
-  Exit
-Play 100 wait {value}
-List Add Greeted {user}
-ExportGreetedList
+
+  OnSpeak *
+    param lower user
+    List Contains Greeted {user}
+    If 1 {contains} = true
+      Exit
+    list get {user}Enter
+    if 1 {value} = "None found"
+      Exit
+    PlaySFX {value}
+    List Add Greeted {user}
+    ExportGreetedList
