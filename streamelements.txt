@@ -23,3 +23,29 @@ onAction streamelements_DuelDecline
 
 onAction streamelements_DuelAccept
   chat send "!accept"
+
+## Message Send Library for Stream Elements Commands ##
+
+onMessage "streamelements_GivePoints"
+  streamelements_GivePoints {data}
+
+onMessage "streamelements_AddPoints"
+  streamelements_AddPoints {data}
+
+onMessage "streamelements_SetPoints"
+  streamelements_SetPoints {data}
+
+onMessage "streamelements_SetGame"
+  streamelements_SetGame {data}
+
+onMessage "streamelements_SetTitle"
+  streamelements_SetTitle "{data}"
+
+onMessage "streamelements_Duel"
+  streamelements_Duel {data}
+
+onMessage "streamelements_DuelDecline"
+  streamelements_DuelDecline
+
+onMessage streamelements_DuelAccept
+  streamelements_DuelAccept
