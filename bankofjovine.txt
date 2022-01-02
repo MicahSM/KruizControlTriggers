@@ -1,5 +1,5 @@
 OnChannelPoint "Work in the Salt Mines"
-  Chat Send "!givepoints {user} 60"
+  streamelements_GivePoints {user} 60
 
 OnChannelPoint "1K Pencil Duel"
-  Chat Send "!duel {user} 1000"
+  streamelements_Duel {user} 1000
