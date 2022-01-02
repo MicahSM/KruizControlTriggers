@@ -1,0 +1,16 @@
+## Action Library to use Stream Elements Commands ##
+
+onAction streamelements_GivePoints
+  chat send "!givepoints {in1} {in2}"
+
+onAction streamelements_AddPoints
+  chat send "!addpoints {in1} {in2}"
+
+onAction streamelements_SetPoints
+  chat send "!setpoints {in1} {in2}"
+
+onAction streamelements_SetGame
+  chat send "!setgame {in1}"
+
+onAction streamelements_SetTitle
+  chat send "!settitle {in1}"
