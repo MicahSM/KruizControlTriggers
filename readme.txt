@@ -34,6 +34,10 @@ Module Details:
 
   Plays a sound from the sounds folder upon the first chat of specific chatters. This does require a bit of diving into this module, so not for the faint of heart.
 
+==jukebox==
+
+  Allows for music to be played in a seperate Kruiz Control thread. Dependency for music based modules.
+
 ==mediacontrols==
 
   Uses strm.tool to allow mods to play/pause my music, and skipping of music with channel points. Requires some setup.
@@ -52,7 +56,7 @@ Module Details:
 
 ==sfx==
 
-  plays sfx when users pay channel points. I have a seperate folder for first fanfares, and I also include a limited "Budget" option that comes up every 15 minutes.
+  plays sfx when users pay channel points. I have a seperate folder for first fanfares, and I also include a limited "Budget" option that comes up every hour. Additionally, this is a seperate Kruiz Control thread if I want to play SFX from other modules.
 
 ==speedrun==
 
