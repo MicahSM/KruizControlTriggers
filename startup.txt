@@ -25,7 +25,7 @@
 #Auto Post to Discord Live#
 ###########################
 
-  OnKeyword b 6000 "{TwitchID} is now live!"
+  OnKeyword b 6000 "is now live!"
     variable load DiscordWebHook
     variable load TwitchID
     variable Load Avatar
