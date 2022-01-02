@@ -6,7 +6,7 @@
 #Quick Runs#
 ############
 
-  OnCommand e 0 "!quickruns" "!quickrunlist"
+  OnCommand e 30 "!quickruns" "!quickrunlist"
     List Export QuickRuns
     chat Send {QuickRuns}
     exit
@@ -27,7 +27,7 @@
     chat Send "{after} has been removed."
     exit
 
-  OnCommand e 0 "!quickrunrandom" "!quickrunsrandom"
+  OnCommand e 30 "!quickrunrandom" "!quickrunsrandom"
     List Get QuickRuns
     chat Send "RNG Has Chosen: {value}"
     exit
