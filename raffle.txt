@@ -1,0 +1,45 @@
+### REQUIRES SOME SETUP! MAKE SURE SETTINGS ARE FILLED OUT! ###
+# - RaffleRarities
+# - RafflePrizes
+
+
+
+OnInit
+  list count RaffleRarities
+  variable set RaffleRaritiesLen {count}
+  variable set increment 0
+  loop 6 {RaffleRaritiesLen}
+    list get RaffleRarities {increment}
+    loop 1 {RaffleRaritiesLen}
+      list add raffleRarityRandomizer {value}
+    param add increment 1
+    param subtract RaffleRaritiesLen 1
+
+
+OnCommand e 0 "!raffleprizes" "!raffleprize" "!prizes" "!prize"
+  Param Proper after
+  List Export "{after}_Prizelist"
+  chat Send "{{after}_Prizelist}"
+  exit
+
+OnChannelPoint "Rafflecard" "Raffle" "Raffle Card" "Buy Raffle" "Buy Raffle Card" "Scratch Card" "ScratchCard" "Buy Scratchcard" "Buy Scratch Card"
+  list get raffleRarityRandomizer
+  variable set  rafflePickedRarity {value}
+  list get "{value}_Prizelist"
+  random probability {value} 1
+  #chat send "Congrats {user}! Your {rafflePickedRarity} prize was {value}!"
+
+
+################################
+#   Raffle Specific Actions    #
+################################
+
+
+
+################################
+#        Test  Actions         #
+################################
+
+onCommand b 0 "!RaffleCheck"
+  list get raffleRarityRandomizer
+  chat send "{value}"
