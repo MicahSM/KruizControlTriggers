@@ -20,3 +20,6 @@ onAction streamelements_Duel
 
 onAction streamelements_DuelDecline
   chat send "!decline"
+
+onAction streamelements_DuelAccept
+  chat send "!accept"
