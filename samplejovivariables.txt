@@ -8,6 +8,13 @@
     OnInit
       variable Set DiscordWebHook --YOUR WEBHOOK HERE--
 
+  ## Strm.Tool Stuff ##
+  # These are all keys from CrashKoek's strm.tool - No need to use them if you don't want those functionalities.
+    OnInit
+      variable set strmtool_Next -- API LINK HERE --
+      variable set strmtool_Previous -- API LINK HERE --
+      variable set strmtool_PausePlay -- API LINK HERE --
+
 ###########################
 #    Module Settings      #
 ###########################
@@ -53,12 +60,12 @@
 # MAKE SURE YOU HAVE THE SOUND IN YOUR SOUND FILE!
 #
 
-OnInit
-#Create a list with the SFXfile as it's only entry
-## MAKE SURE USERNAMES ARE ALL LOWERCASE! ##
-#Example:
-list add jovineEnter "yowassup"
-#(User is Jovine, Soundeffect is yowassup.mp3)
+  OnInit
+    #Create a list with the SFXfile as it's only entry
+    ## MAKE SURE USERNAMES ARE ALL LOWERCASE! ##
+    #Example:
+    list add jovineEnter "yowassup"
+    #(User is Jovine, Soundeffect is yowassup.mp3)
 
 
 ###########################
