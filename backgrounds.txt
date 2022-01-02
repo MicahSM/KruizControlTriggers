@@ -97,6 +97,7 @@
 ###########################
 
 ## Channel Point Reward ##
+  OnChannelPoint "Random BG"
   Variable Load BackgroundSource
   #Get Length of BGList
   List Count Backgrounds
