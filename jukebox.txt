@@ -1,2 +1,2 @@
-onAction "jukebox"
+onAction "playMusic"
   play {in1} wait {in2}
