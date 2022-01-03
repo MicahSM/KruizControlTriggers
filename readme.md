@@ -218,8 +218,8 @@ Dependency for other modules to change chat to Subscriber, Slow Mode, and Emote 
 
 <hr>
 
-<h2>quotes</h2>
-<h6>file: </h6> <h6>Dependencies:</h6><br>
+<h2>StreamElements Add Quotes</h2>
+<h6>file:quotes.txt </h6> <h6>Dependencies:</h6><br>
 
   You can't change permissions for who can add quotes in StreamElements, so I went ahead and added this so my VIPs can add quotes.
 
@@ -238,10 +238,37 @@ Dependency for other modules to change chat to Subscriber, Slow Mode, and Emote 
 
 <hr>
 
-<h2>sfx</h2>
-<h6>file: </h6> <h6>Dependencies:</h6><br>
+<h2>Raffle/Scratch Cards</h2>
+<h6>file: raffle.txt</h6> <h6>Dependencies: None, but reccomended to have streamelements.txt, sfx.txt, jukebox.txt</h6><br>
 
-  plays sfx when users pay channel points. I have a seperate folder for first fanfares, and I also include a limited "Budget" option that comes up every hour. Additionally, this is a seperate Kruiz Control thread if I want to play SFX from other modules.
+This Module requires setting up variables : RaffleRarities and creating all the Prize lists for the rarities (Ex: Common_Prizelist).
+This module allows for creating a ChannelPoint reward that does any action. I reccomend actions like:
+streamelements_AddPoints [user] [amount]
+streamelements_AddPoints all [amount]
+playSFX [sfxname]
+
+Rarities scale linearly: If you have 5 total Rarities, total Rarity is 15 (5+4+3+2+1). The first in the list is the most common, and in the set of five example would be chosen 5/15 of the times. Uncommon would be 4/15, Rare 3/15, Epic 2/15 and Legendary 1/15.
+
+The more you want to customize this, the more you have to get into Kruiz Control.
+
+<table>
+  <tr>
+    <th>Channel Point Redemption</th>
+    <th>Options</th>
+    <th>Output</th>
+  </tr>
+  <tr>
+    <td>Raffle,Scratch Card, More Aliases in Description</td>
+    <td>None</td>
+    <td>Randomly selects a prize from your prize list, allowing for rarities. All Aliases: "Rafflecard" "Raffle" "Raffle Card" "Buy Raffle" "Buy Raffle Card" "Scratch Card" "ScratchCard" "Buy Scratchcard" "Buy Scratch Card"</td>
+  </tr>
+
+<hr>
+
+<h2>Sound Effects</h2>
+<h6>file: sfx.txt </h6> <h6>Dependencies:</h6><br>
+
+  Plays sfx when users pay channel points. I have a seperate folder for first fanfares, and I also include a limited "Budget" option that comes up every hour. Additionally, this is a seperate Kruiz Control thread if I want to play SFX from other modules.
 
   <table>
     <tr>
