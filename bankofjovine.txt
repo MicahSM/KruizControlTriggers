@@ -1,5 +1,0 @@
-OnChannelPoint "Work in the Salt Mines"
-  streamelements_GivePoints {user} 60
-
-OnChannelPoint "1K Pencil Duel"
-  streamelements_Duel {user} 1000
