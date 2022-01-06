@@ -1,14 +1,28 @@
+########################
+#      Entry SFX       #
+########################
 
-OnChannelPoint "Sound Effects"
-PlaySFX "{message}"
+  OnSpeak *
+    param lower user
+    List Contains Greeted {user}
+    If 1 {contains} = true
+      Exit
+    list get {user}Enter
+    if 1 {value} = "None found"
+      Exit
+    PlaySFX {value}
+    List Add Greeted {user}
+    ExportGreetedList
 
-OnChannelPoint "Budget SFX"
-PlaySFX "{message}"
+########################
+#      Point SFX       #
+########################
 
-OnChannelPoint "First"
-PlaySFX "fanfare/{message}"
+  OnChannelPoint "Sound Effects"
+  PlaySFX "{message}"
 
-onAction "PlaySFX"
-Play 100 wait "{in1}.wav"
-Play 100 wait "{in1}.mp3"
-Play 100 wait "{in1}.ogg"
+  OnChannelPoint "Budget SFX"
+  PlaySFX "{message}"
+
+  OnChannelPoint "First"
+  PlaySFX "fanfare/{message}"
