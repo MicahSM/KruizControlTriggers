@@ -262,6 +262,21 @@ The more you want to customize this, the more you have to get into Kruiz Control
     <td>None</td>
     <td>Randomly selects a prize from your prize list, allowing for rarities. All Aliases: "Rafflecard" "Raffle" "Raffle Card" "Buy Raffle" "Buy Raffle Card" "Scratch Card" "ScratchCard" "Buy Scratchcard" "Buy Scratch Card"</td>
   </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Command</th>
+    <th>Permissions</th>
+    <th>Output</th>
+  </tr>
+  <tr>
+    <td>!raffleprizes [rarity],<br> !scratchprizes [rarity],<br> !prizes [rarity]</td>
+    <td>Everyone</td>
+    <td>Posts the [rarity] pool of prizes to chat. Directly Exports the list of prizes.</td>
+  </tr>
+
+</table>
 
 <hr>
 
