@@ -1,0 +1,23 @@
+onAction SendList
+  List Export {in1}
+  chat send {"{in1}"}
+  exit
+
+onAction ListAddConfirm
+  List Add {in1} {in2}
+  chat send "{in2} added to {in1}"
+  exit
+
+onAction ListRemoveConfirm
+  List Index {in1} {in2}
+  if 2 {index} = -1
+    chat Send "{in2} isn't on the list."
+    exit
+  List Remove {in1} {in2}
+  chat Send "{in2} has been removed from {in1}."
+  exit
+
+onAction ListClearConfirm
+  List Empty {in1}
+  Chat Send "{in1} has been cleared."
+  exit

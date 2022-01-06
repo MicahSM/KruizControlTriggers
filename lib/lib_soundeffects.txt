@@ -1,0 +1,4 @@
+onAction "PlaySFX"
+Play 100 wait "{in1}.wav"
+Play 100 wait "{in1}.mp3"
+Play 100 wait "{in1}.ogg"

@@ -1,0 +1,14 @@
+onAction PCMediaPrevious
+variable load strmtool_Previous
+API GET {strmtool_Previous}
+exit
+
+onAction PCMediaNext
+variable load strmtool_Next
+API GET {strmtool_Next}
+exit
+
+onAction PCMediaPausePlay
+variable load strmtool_PausePlay
+API GET {strmtool_PausePlay}
+exit
