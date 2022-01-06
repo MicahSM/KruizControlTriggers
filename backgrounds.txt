@@ -22,26 +22,16 @@
 
   OnCommand e 15 "!backgrounds" "!background"
     List Export Backgrounds
-    chat Send {Backgrounds}
-    exit
+    chat send {Backgrounds}
 
   OnCommand bm 0 "!Backgroundadd" "!Backgroundsadd" "!bgadd"
-    List Add Backgrounds {after}
-    chat Send "{after} added!"
-    exit
+    ListAddConfirm "Backgrounds" "{after}"
 
   OnCommand bm 0 "!Backgroundremove" "!Backgroundsremove" "!bgremove"
-    List Index Backgrounds {after}
-    if 2 {index} = -1
-      chat Send "{after} isn't on the list."
-      exit
-    List Remove Backgrounds {index}
-    chat Send "{after} has been removed."
-    exit
+    ListRemoveConfirm "Backgrounds" "{after}"
 
   OnCommand bm 0 "!bgclear" "!backgroundsclear" "!backgroundclear"
-    List Empty Backgrounds
-    Chat Send "Backgrounds have been cleared."
+    ListClearConfirm "Backgrounds"
 
 ###########################
 #     Basic BG Stuffs     #
