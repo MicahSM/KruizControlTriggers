@@ -7,11 +7,21 @@ Add sounds you want into the sounds folder (.wav, .mp3,, .ogg only please. .ogg 
 
 I strongly recommend using Kruiz-Control-Configurator, if nothing else, to keep your Kruiz Control up to date.
 
+There are two main pieces to my code:
+
+The Lib Folder:
+  This is primarily a TON of stuff that I use to make other functions work and not have to re-write code over and over again. This isn't really meant to be plug and play stuff, but is mostly here for you to read and make stuff with it if you want to. I'm not currently planning on making real documents for these, but maybe I will later.
+
+Everything Else:
+  These are the core triggers! These are explained in the documents below. These will have semi-friendly ways of setting them up that works for you best, mostly done through chat commands or setting up samplejovivariables.txt with your own info.
+
+
+
 <hr>
 
 
 <h2>Changing Backgrounds</h2>
-<h6>file: backgrounds.txt</h6> <h6>Dependencies: None</h6><br>
+<h6>file: backgrounds.txt</h6> <h6>Dependencies: lib_globallist.txt</h6><br>
 
 
   If you have a scene with multiple backgrounds, this module will allow you to randomly pick them using a chat Command,, as a Channel Point reward! It does require setting up the list in chat, using the !bgadd command.
@@ -79,13 +89,6 @@ I strongly recommend using Kruiz-Control-Configurator, if nothing else, to keep 
 
 <hr>
 
-<h2>Stream Elements Points Management</h2>
-<h6>file: bankofjovine.txt</h6> <h6>Dependencies: streamelements.txt</h6><br>
-
-  I personally have 2 points systems, so I can have 1 that I have more direct control over. This allows people to get a bonus for that secondary point system once a day. (I use Twitch points and Stream Elements points)
-
-<hr>
-
 <h2>Rolling Dice</h2>
 <h6>file: dice.txt</h6> <h6>Dependencies: None</h6><br>
 
@@ -106,25 +109,6 @@ I strongly recommend using Kruiz-Control-Configurator, if nothing else, to keep 
     <td>This rolls multiple dice and displays them individually. [die count] is the number of dice rolled, [die size] is the size of the die. <br>ex: !roll 3d10</td>
   </tr>
 </table>
-
-<hr>
-
-<h2>Sound Effects on Entry</h2>
-<h6>file: entrysounds.txt</h6> <h6>Dependencies: SFX.txt</h6><br>
-
-  Plays a sound from the sounds folder upon the first chat of specific chatters. This does require a bit of diving into the variable setup.
-
-  The Variables for this are broken down like this:<br>
-    <code>list add [username]Enter "[filename]"</code><br>
-  [username] is the username checked on entry.
-  [filename] is the name of the file to play that the Sound Effect is. NO FILE EXTENSION.
-
-<hr>
-
-<h2>Music Player</h2>
-<h6>file: jukebox.txt</h6> <h6>Dependencies: None</h6><br>
-
-  Allows for music to be played in a seperate Kruiz Control thread. Dependency for music based modules. Does nothing on it's own.
 
 <hr>
 
@@ -188,13 +172,6 @@ I strongly recommend using Kruiz-Control-Configurator, if nothing else, to keep 
       <td>60 Second Cooldown. Posts a link to your most recent video. Requires {YoutubeID} variable filled out.</td>
     </tr>
   </table>
-
-<hr>
-
-<h2>Mode Changer</h2>
-<h6>file: modes.txt </h6> <h6>Dependencies: None</h6><br>
-
-Dependency for other modules to change chat to Subscriber, Slow Mode, and Emote Only chat on the fly, with a timer. No Outward Facing Commands.
 
 <hr>
 
@@ -281,9 +258,16 @@ The more you want to customize this, the more you have to get into Kruiz Control
 <hr>
 
 <h2>Sound Effects</h2>
-<h6>file: sfx.txt </h6> <h6>Dependencies:</h6><br>
+<h6>file: sfx.txt </h6> <h6>Dependencies: lib_soundeffects.txt</h6><br>
 
   Plays sfx when users pay channel points. I have a seperate folder for first fanfares, and I also include a limited "Budget" option that comes up every hour. Additionally, this is a seperate Kruiz Control thread if I want to play SFX from other modules.
+  Additionally, gives the option to play a sound from the sounds folder upon the first chat of specific chatters. This does require a bit of diving into the variable setup.
+
+  The Variables for entry SFX are broken down like this:<br>
+    <code>list add [username]Enter "[filename]"</code><br>
+  [username] is the username checked on entry.
+  [filename] is the name of the file to play that the Sound Effect is. NO FILE EXTENSION.
+
 
   <table>
     <tr>
@@ -311,7 +295,7 @@ The more you want to customize this, the more you have to get into Kruiz Control
 <hr>
 
 <h2>Quickrun List</h2>
-<h6>file: speedrun.txt </h6> <h6>Dependencies: None</h6><br>
+<h6>file: speedrun.txt </h6> <h6>Dependencies: lib_globallist.txt</h6><br>
 
   I have a list of quickruns I offer as a points reward. This really essentially functions as a list I can easily mess with using KC commands, rather than making a ton in Stream Elements.
 
@@ -366,15 +350,3 @@ The more you want to customize this, the more you have to get into Kruiz Control
   </table>
 
 <hr>
-
-<h2>Steam Cleaning</h2>
-<h6>file: steamcleaning.txt </h6> <h6>Dependencies: None</h6><br>
-
-I have streams where we take a list of games and play about 15 minutes of them, and pick at random. This helps me keep track of what's been played, helps me allow people to spend points to impact how they choose games, and I just wanted to see if I could make something like it to practice a bit more. This is here for reference mostly, I don't recommend using it, and I don't have a full breakdown here explaining it.
-
-<hr>
-
-<h2>Stream Elements Actions</h2>
-<h6>file: streamelements.txt </h6> <h6>Dependencies: None</h6><br>
-
-Dependency file for Stream Elements Actions. The majority of these are for making it easier to do typical stream elements things, like Giving out points, Dueling, Setting your Game, or Setting your title. No Outward Facing Commands.
