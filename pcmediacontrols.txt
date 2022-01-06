@@ -1,0 +1,30 @@
+#######################
+#Channel Point Control#
+#######################
+#
+# REQUIRES SETTING UP CrashKoek's Strm.Tool!
+# Mandatory Variables:
+# strmtool_Next,strmtool_Previous,strmtool_PausePlay
+#
+
+
+  OnChannelPoint "Media Controls"
+    Param Lower message
+    if 1 {message} = "back" "previous"
+      PCMediaPrevious
+    if 1 {message} = "skip" "next"
+      PCMediaNext
+    chat send "Invalid Command"
+
+########################
+#   Command Controls   #
+########################
+
+  onCommand bvm 0 "!pausemusic" "!playmusic"
+    PCMediaPausePlay
+
+  onCommand bvm 0 "!nextmusic"
+    PCMediaNext
+
+  onCommand bvm 0 "!previousmusic"
+    PCMediaPrevious
