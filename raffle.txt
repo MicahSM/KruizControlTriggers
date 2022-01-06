@@ -16,7 +16,7 @@ OnInit
     param subtract RaffleRaritiesLen 1
 
 
-OnCommand e 0 "!raffleprizes" "!raffleprize" "!prizes" "!prize"
+OnCommand e 0 "!raffleprizes" "!Scratchprize" "!prizes"
   Param Proper after
   List Export "{after}_Prizelist"
   chat Send "{{after}_Prizelist}"
