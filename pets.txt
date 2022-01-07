@@ -1,3 +1,59 @@
-OnChannelPoint "Swap My Pet"
-  OBS SceneSource "pets" "TotallyMyPetDog" toggle
-  OBS SceneSource "pets" "TotallyMyPetCat" toggle
+##############################
+#       Load Variables       #
+##############################
+  # Make sure to have these Variables:
+  # - PetsSource
+  #
+##############################
+# OnInit Stuff (Don't Touch) #
+##############################
+
+  OnInit
+    ListInit Pets
+
+####################
+# Making Pets List #
+####################
+
+#Commands to change list - CASE SENSITIVE!
+
+  OnCommand e 15 "!pets"
+    SendList list_Pets
+
+  OnCommand bm 0 "!PetsAdd"
+    ListAddConfirm "list_Pets" "{after}"
+
+  OnCommand bm 0 "!Petsremove"
+    ListRemoveConfirm "list_Pets" "{after}"
+
+  OnCommand bm 0 "!Petsclear"
+    ListClearConfirm "list_Pets"
+
+###########################
+#    Basic Pets Stuffs    #
+###########################
+
+## Command to List Current Pets ##
+  OnCommand e 15 "!currentPet" "!PetCurrent"
+    ListCurrentOBS Pets
+
+## Command to Manually Change##
+  OnCommand vbm 0 "!changePet" "!Petset"
+    ListChoose Pets {after}
+
+## Channel Point Reward to Pick##
+  OnChannelPoint "Pick Pet"
+    ListChoose Pets {after}
+
+
+###########################
+#     Randomizer Code     #
+###########################
+
+## Channel Point Reward ##
+  OnChannelPoint "Random Pet"
+    ListRandom Pets
+
+## Override Command for Broadcaster ##
+  OnCommand b 0 "!RandomPet" "!Petrandom"
+    ListRandom Pets
