@@ -1,3 +1,9 @@
+onAction ListInit
+  #Global List Init
+  List Global list_{in1} On
+  #Global Variable for Choice init
+  Variable Global Set choice_{in1}
+
 onAction SendList
   List Export {in1}
   chat send {"{in1}"}
@@ -21,3 +27,44 @@ onAction ListClearConfirm
   List Empty {in1}
   Chat Send "{in1} has been cleared."
   exit
+
+onAction ListCurrentOBS
+  variable load {in1}Source
+  List Count list_{in1}
+  param create Increment
+  loop 6 {count}
+    List Get list_{in1} {Increment}
+    OBS IsSceneSourceVisible {in1}Source {value}
+    if 2 {is_visible} = true
+      Chat Send "Current: {value}"
+      exit
+    Param Add Increment 1
+
+onAction ListChoose
+  Variable Load {in1}Source
+  variable global set choice_{in1} {in2}
+  List Count list_{in1}
+  Param Create Increment 0
+  loop 5 {count}
+    List Get list_{in1} {Increment}
+    OBS SceneSource {{in1}Source} {value} off
+    if 1 {{in2}Choice} = {value}
+      OBS SceneSource {{in1}Source} {value} on
+    Param Add Increment 1
+
+onAction ListRandom
+  Variable Load {in1}Source
+  List Count list_{in1}
+  List Get list_{in1}
+  #If Dupe, try to remove
+  loop 2 100
+    if 1 {{arg1}Choice} = {value}
+      List Get list_{in1}
+  variable global set choice_{in1} {value}
+  Param Create Increment 0
+  loop 5 {count}
+    List Get list_{in1} {Increment}
+    OBS SceneSource {{in1}Source} {value} off
+    if 1 {choice_{in1}} = {value}
+      OBS SceneSource {{in1}Source} {value} on
+    Param Add Increment 1
