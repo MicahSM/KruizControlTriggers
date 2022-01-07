@@ -53,17 +53,17 @@ Everything Else:
     <td>15 Second Cooldown. This Command shows the list of all backgrounds.</td>
   </tr>
   <tr>
-    <td>!currentBG, !BGCurrent</td>
+    <td>!currentBG,<br> !BGCurrent</td>
     <td>Everyone</td>
     <td>15 Second Cooldown. Sends the Current Background name to chat.</td>
   </tr>
   <tr>
-    <td>!changebg [background name], !bgset [background name]</td>
-    <td>Broadcaster, Moderator, VIP</td>
+    <td>!changebg [background name],<br> !bgset [background name]</td>
+    <td>Broadcaster<br> Moderator<br> VIP</td>
     <td>Sets the current background to [background name].</td>
   </tr>
   <tr>
-    <td>!randomBG, !bgrandom</td>
+    <td>!randomBG, <br>!bgrandom</td>
     <td>Broadcaster</td>
     <td>Sets the Background to a random Background.</td>
   </tr>
@@ -113,7 +113,7 @@ Everything Else:
 <hr>
 
 <h2>Media Controller</h2>
-<h6>file: mediacontrols.txt</h6> <h6>Dependencies: None</h6><br>
+<h6>file: pcmediacontrols.txt</h6> <h6>Dependencies: None</h6><br>
 
   Uses strm.tool to allow mods to play/pause my music, and skipping of music with channel points. Requires some setup with Crash Koek's strm.tools, filling out the strmtool variables.
 
@@ -124,8 +124,8 @@ Everything Else:
       <th>Output</th>
     </tr>
     <tr>
-      <td>!playmusic, !pausemusic</td>
-      <td>Broadcaster, Moderator, VIP</td>
+      <td>!playmusic,<br> !pausemusic</td>
+      <td>Broadcaster<br> Moderator<br> VIP</td>
       <td>This command pauses/plays the music.</td>
     </tr>
   </table>
@@ -138,7 +138,7 @@ Everything Else:
     </tr>
     <tr>
       <td>Media Controls</td>
-      <td>skip, back</td>
+      <td>skip<br> back</td>
       <td>Channel Point redemption that Skips, Goes Back a song based on the filled out message.</td>
     </tr>
   </table>
@@ -176,22 +176,70 @@ Everything Else:
 <hr>
 
 <h2>Pets</h2>
-<h6>file: pets.txt </h6> <h6>Dependencies: None</h6><br>
+<h6>file: pets.txt </h6> <h6>Dependencies: lib_globallist.txt</h6><br>
 
-  I have some pets on my stream that I toggle between with channel points. It's actually a super simple setup, but it does require editing the actual trigger if you wanted to use it for something.
+Functionally the same as the Backgrounds, but just another seperate list! I use this for pets that I keep on my screen.
 
-  <table>
-    <tr>
-      <th>Channel Points Reward</th>
-      <th>Options</th>
-      <th>Output</th>
-    </tr>
-    <tr>
-      <td>Swap My Pet</td>
-      <td>None</td>
-      <td>Swaps Between "TotallyMyPetDog" and "TotallyMyPetCat" in the OBS Scene "pets"</td>
-    </tr>
-  </table>
+<table>
+<tr>
+  <th>Command</th>
+  <th>Permissions</th>
+  <th>Output</th>
+</tr>
+<tr>
+  <td>!petadd [source name] </td>
+  <td>Broadcaster</td>
+  <td>This adds [source name] as a source that can be chosen for a random pet.</td>
+</tr>
+<tr>
+  <td>!petremove [source name]</td>
+  <td>Broadcaster</td>
+  <td>This removes [source name] from the pets list.</td>
+</tr>
+<tr>
+  <td>!petsclear</td>
+  <td>Broadcaster</td>
+  <td>This entirely clears the pets list.</td>
+</tr>
+<tr>
+  <td>!pets</td>
+  <td>Everyone</td>
+  <td>15 Second Cooldown. This Command shows the list of all pets.</td>
+</tr>
+<tr>
+  <td>!currentPet,<br> !PetCurrent</td>
+  <td>Everyone</td>
+  <td>15 Second Cooldown. Sends the Current Pet name to chat.</td>
+</tr>
+<tr>
+  <td>!changepet [source name],<br> !petset [source name]</td>
+  <td>Broadcaster, Moderator, VIP</td>
+  <td>Sets the current pet to [source name].</td>
+</tr>
+<tr>
+  <td>!randompet, !petrandom</td>
+  <td>Broadcaster</td>
+  <td>Sets the pet to a random choice.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+  <th>Channel Point Rewards</th>
+  <th>Options</th>
+  <th>Output</th>
+</tr>
+<tr>
+  <td>Pick Pet</td>
+  <td>[Source Name]</td>
+  <td>Changes the pet to whatever source is in the Message.</td>
+</tr>
+<tr>
+  <td>Random Pet</td>
+  <td>None</td>
+  <td>Randomly Selects a Pet</td>
+</tr>
+</table>
 
 <hr>
 
