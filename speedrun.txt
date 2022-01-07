@@ -7,9 +7,7 @@
 ############
 
   OnCommand e 30 "!quickruns" "!quickrunlist"
-    List Export QuickRuns
-    chat Send {QuickRuns}
-    exit
+    SendList "QuickRuns"
 
   OnCommand vbm 0 "!quickrunadd" "!quickrunsadd"
     param proper after
