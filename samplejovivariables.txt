@@ -60,12 +60,12 @@
 # MAKE SURE YOU HAVE THE SOUND IN YOUR SOUND FILE!
 #
 
-  OnInit
-    #Create a list with the SFXfile as it's only entry
-    ## MAKE SURE USERNAMES ARE ALL LOWERCASE! ##
-    #Example:
-    list add jovineEnter "yowassup"
-    #(User is Jovine, Soundeffect is yowassup.mp3)
+OnInit
+  #Create a list with the SFXfile(s) for it's entries
+  #Example: list import jovineEnter '["yowassup"]' (User is Jovine, Soundeffect is yowassup.mp3)
+  #Example for Multi: list import jovineEnter '["yowassup","lanky","bikkuri","tuturu"]' (User is Jovine, SFX are the list)
+  list import jovineEnter '["yowassup","lanky","bikkuri","tuturu"]'
+  list import searnsEnter '["tuturu"]'
 
 
 ###########################
