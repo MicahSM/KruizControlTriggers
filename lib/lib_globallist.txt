@@ -42,13 +42,17 @@ onAction ListCurrentOBS
 
 onAction ListChoose
   Variable Load {in1}Source
+  List Index list_{in1} {in2}
+  if 2 {index} = -1
+    chat Send "{in2} isn't on the list."
+    exit
   variable global set choice_{in1} {in2}
   List Count list_{in1}
   Param Create Increment 0
   loop 5 {count}
     List Get list_{in1} {Increment}
     OBS SceneSource {{in1}Source} {value} off
-    if 1 {{in2}Choice} = {value}
+    if 1 {choice_{in1}} = {value}
       OBS SceneSource {{in1}Source} {value} on
     Param Add Increment 1
 
