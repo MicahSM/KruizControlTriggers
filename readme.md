@@ -213,11 +213,11 @@ Functionally the same as the Backgrounds, but just another seperate list! I use 
 </tr>
 <tr>
   <td>!changepet [source name],<br> !petset [source name]</td>
-  <td>Broadcaster, Moderator, VIP</td>
+  <td>Broadcaster<br> Moderator<br> VIP</td>
   <td>Sets the current pet to [source name].</td>
 </tr>
 <tr>
-  <td>!randompet, !petrandom</td>
+  <td>!randompet,<br> !petrandom</td>
   <td>Broadcaster</td>
   <td>Sets the pet to a random choice.</td>
 </tr>
@@ -255,7 +255,7 @@ Functionally the same as the Backgrounds, but just another seperate list! I use 
       <th>Output</th>
     </tr>
     <tr>
-      <td>!quoteadd [Quote], !addquote [Quote]</td>
+      <td>!quoteadd [Quote],<br> !addquote [Quote]</td>
       <td>VIP</td>
       <td>Sends "!quote add [Quote]" in chat, activating Stream Element's quote function.</td>
     </tr>
@@ -283,7 +283,7 @@ The more you want to customize this, the more you have to get into Kruiz Control
     <th>Output</th>
   </tr>
   <tr>
-    <td>Raffle,Scratch Card, More Aliases in Description</td>
+    <td>Raffle,<br> Scratch Card,<br> More Aliases in Description</td>
     <td>None</td>
     <td>Randomly selects a prize from your prize list, allowing for rarities. All Aliases: "Rafflecard" "Raffle" "Raffle Card" "Buy Raffle" "Buy Raffle Card" "Scratch Card" "ScratchCard" "Buy Scratchcard" "Buy Scratch Card"</td>
   </tr>
@@ -354,22 +354,22 @@ The more you want to customize this, the more you have to get into Kruiz Control
       <th>Output</th>
     </tr>
     <tr>
-      <td>!quickruns, !quickrunslist</td>
+      <td>!quickruns,<br> !quickrunslist</td>
       <td>Everyone</td>
       <td>30 Second Cooldown. Posts the Quickruns list to chat.</td>
     </tr>
     <tr>
-      <td>!quickrunadd [quickrun], !quickrunsadd [quickrun]</td>
-      <td>Broadcaster, Moderator, VIP</td>
+      <td>!quickrunadd [quickrun],<br> !quickrunsadd [quickrun]</td>
+      <td>Broadcaster<br> Moderator<br> VIP</td>
       <td>Adds [quickrun] to the Quickruns List.</td>
     </tr>
     <tr>
-      <td>!quickrunremove [quickrun], !quickrunsremove [quickrun]</td>
-      <td>Broadcaster, Moderator, VIP</td>
+      <td>!quickrunremove [quickrun],<br> !quickrunsremove [quickrun]</td>
+      <td>Broadcaster<br> Moderator<br> VIP</td>
       <td>Removes [quickrun] to the Quickruns List.</td>
     </tr>
     <tr>
-      <td>!quickrunrandom, !quickrunsraundom</td>
+      <td>!quickrunrandom,<br> !quickrunsraundom</td>
       <td>Everyone</td>
       <td>30 Second Cooldown. Sends a random Quickrun from the list to chat.</td>
     </tr>
