@@ -42,8 +42,8 @@
     ListChoose Backgrounds {after}
 
 ## Channel Point Reward to Pick##
-  OnChannelPoint "Pick Pet"
-    ListChoose Backgrounds {after}
+  OnChannelPoint "Pick Background"
+    ListChoose Backgrounds {message}
 
 
 ###########################
@@ -51,7 +51,7 @@
 ###########################
 
 ## Channel Point Reward ##
-  OnChannelPoint "Random Pet"
+  OnChannelPoint "Random Background"
     ListRandom Backgrounds
 
 ## Override Command for Broadcaster ##
