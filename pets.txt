@@ -43,7 +43,7 @@
 
 ## Channel Point Reward to Pick##
   OnChannelPoint "Pick Pet"
-    ListChoose Pets {after}
+    ListChoose Pets {message}
 
 
 ###########################
