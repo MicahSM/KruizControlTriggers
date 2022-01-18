@@ -17,7 +17,7 @@ onAction ListAddConfirm
 onAction ListRemoveConfirm
   List Index {in1} {in2}
   if 2 {index} = -1
-    chat Send "{in2} isn't on the list."
+    chat Send "{in2} isn't on {in1}."
     exit
   List Remove {in1} {in2}
   chat Send "{in2} has been removed from {in1}."
