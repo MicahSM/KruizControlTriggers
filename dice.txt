@@ -14,15 +14,4 @@ OnCommand e 4 "!roll"
   Function 'return {multitude: [quantity]*[magnitude]}'
   Random Number {quantity} {multitude}
   Chat Send "{user} rolled {number} 🎲"
-  variable load SteamCleaningOn
-  variable load Cleaner
-  variable load scdicerolled
-  if 2 {scdicerolled} = true
-    chat send "HEY! YOU ALREADY ROLLED, STOP CHEATING!"
-    exit
-  if 4 {SteamCleaningOn} = true
-    if 3 {after} = "1d100"
-      if 2 {user} = {Cleaner}
-        variable set lastd100 {number}
-        message send SteamRoll
   exit
