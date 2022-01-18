@@ -3,29 +3,20 @@
 ########################
 #Only one at a time can be activated due to how timers work
 
-onAction "LoudModeToggle"
-chat send "Turning on {in1} mode for {in2} seconds!"
-ModeToggle {in1} {in2}
-
 onAction "ModeToggle"
+param lower in3
+param proper in1
+if 1 {in3} = "loud"
+  chat send "Turning on {in1} mode for {in2} seconds!"
 chat send "/{in1}"
 delay {in2}
 chat send "/{in1}off"
 
-onAction "LoudEmoteOnlyMode"
-LoudModeToggle "emoteonly" {in1}
-
 onAction "EmoteOnlyMode"
-ModeToggle "emoteonly" {in1}
-
-onAction "LoudSubOnlyMode"
-ModeToggle "subscribers" {in1}
+ModeToggle "emoteonly" {in1} {in2}
 
 onAction "SubOnlyMode"
-LoudModeToggle "subscribers" {in1}
-
-onAction "LoudSlowMode"
-LoudModeToggle "slow" {in1}
+ModeToggle "subscribers" {in1} {in2}
 
 onAction "SlowMode"
-ModeToggle "slow" {in1}
+ModeToggle "slow" {in1} {in2}
