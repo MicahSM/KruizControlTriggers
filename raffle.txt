@@ -7,13 +7,27 @@
 OnInit
   list count RaffleRarities
   variable set RaffleRaritiesLen {count}
-  variable set increment 0
-  loop 6 {RaffleRaritiesLen}
-    list get RaffleRarities {increment}
-    loop 1 {RaffleRaritiesLen}
-      list add raffleRarityRandomizer {value}
-    param add increment 1
+  variable load var_BaseRaffleOdds
+  variable load var_IncrementRaffleOdds
+  variable set oddsincrement {var_BaseRaffleOdds}
+  loop 5 {RaffleRaritiesLen}
     param subtract RaffleRaritiesLen 1
+    list get RaffleRarities {RaffleRaritiesLen}
+    loop 1 {oddsincrement}
+      list add raffleRarityRandomizer {value}
+    param add oddsincrement {var_IncrementRaffleOdds}
+
+
+#OnInit
+#  list count RaffleRarities
+#  variable set RaffleRaritiesLen {count}
+#  variable set increment 0
+#  loop 5 {RaffleRaritiesLen}
+#    list get RaffleRarities {increment}
+#    loop 1 {RaffleRaritiesLen}
+#      list add raffleRarityRandomizer {value}
+#    param add increment 1
+#    param subtract RaffleRaritiesLen 1
 
 
 OnCommand e 0 "!raffleprizes" "!Scratchprize" "!prizes"
@@ -45,3 +59,7 @@ OnChannelPoint "Rafflecard" "Raffle" "Raffle Card" "Buy Raffle" "Buy Raffle Card
 onCommand b 0 "!RaffleCheck"
   list get raffleRarityRandomizer
   chat send "{value}"
+
+onCommand b 0 "!RaffleRarityCheck"
+  list export raffleRarityRandomizer
+  chat send "{raffleRarityRandomizer}"

@@ -39,6 +39,12 @@
 #    Raffle  Settings     #
 ###########################
 
+#RaffleOddsVariables
+  #These Variables chage the odds of the Raffle! Default is Base of 1, Increment of 9.
+  OnInit
+    variable set var_BaseRaffleOdds "1"
+    variable set var_IncrementRaffleOdds "9"
+
   #Raffle Variables
     OnInit
       #List of Rarities

@@ -272,7 +272,7 @@ streamelements_AddPoints [user] [amount]
 streamelements_AddPoints all [amount]
 playSFX [sfxname]
 
-Rarities scale linearly: If you have 5 total Rarities, total Rarity is 15 (5+4+3+2+1). The first in the list is the most common, and in the set of five example would be chosen 5/15 of the times. Uncommon would be 4/15, Rare 3/15, Epic 2/15 and Legendary 1/15.
+Rarities scale based on what you set the var_BaseRaffleOdds and var_IncrementRaffleOdds. Default is 1 for the base, and 9 for the increment. For the standard rarities, this makes Legendary 1%, Epic 10%, Rare 20%, Uncommon 30%, and Common 40%.
 
 The more you want to customize this, the more you have to get into Kruiz Control.
 
