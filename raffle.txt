@@ -38,12 +38,10 @@ OnCommand e 0 "!raffleprizes" "!Scratchprize" "!prizes"
 
 OnChannelPoint "Rafflecard" "Raffle" "Raffle Card" "Buy Raffle" "Buy Raffle Card" "Scratch Card" "ScratchCard" "Buy Scratchcard" "Buy Scratch Card"
   list get raffleRarityRandomizer
+  PlaySFX {value}
   variable set  rafflePickedRarity {value}
-  param upper rafflePickedRarity
-  #chat send "{rafflePickedRarity}!"
   list get "{value}_Prizelist"
   random probability {value} 1
-  #chat send "Congrats {user}! Your {rafflePickedRarity} prize was {value}!"
 
 
 ################################
