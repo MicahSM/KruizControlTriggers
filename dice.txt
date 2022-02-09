@@ -1,5 +1,8 @@
 OnCommand e 4 "!rollsplit"
   Function 'var arr = [after].split("d"); return {quantity: arr[0], magnitude: arr[1]}'
+  If 2 {quantity} > 20 or {magnitude} > 1000000
+    chat send "Oops, too much! Try something smaller."
+    exit
   If 1 {quantity} > 1
     Loop 2 {quantity}
       Random Number 1 {magnitude}
